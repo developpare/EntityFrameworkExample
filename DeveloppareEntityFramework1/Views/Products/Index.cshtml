@@ -1,0 +1,31 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using DeveloppareEntityFramework.DAL;
+@model IEnumerable<Product>
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<table class="products">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Details</th>
+    </tr>
+    @{
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductDescription</td>
+                <td> <a asp-controller="Product" asp-action="Index" asp-route-productId="@item.ProductId">Details</a></td>
+            </tr>
+        }
+    }
+</table>
+
+

@@ -1,0 +1,17 @@
+﻿@using DeveloppareEntityFramework.DAL;
+@model Product
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Product Details Page</h2>
+
+<div class="product">
+
+  <h1>@Model.ProductName</h1>
+  <p>@Model.ProductDescription</p>
+
+</div>
+
